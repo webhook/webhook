@@ -1,7 +1,7 @@
 {
   "name": "wh",
   "version": "1.0.1",
-  "description": "Webhook, a CMS and static site generator",
+  "description": "Webhook is the easiest way to build a custom CMS for your next website.",
   "keywords": ["webhook", "cms", "static generator", "static site generator"],
   "main": "index.js",
   "bin": "./bin/wh",
