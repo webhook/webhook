@@ -1,6 +1,6 @@
 {
   "name": "wh",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Webhook is the easiest way to build a custom CMS for your next website.",
   "keywords": ["webhook", "cms", "static generator", "static site generator"],
   "main": "index.js",
