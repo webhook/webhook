@@ -1,6 +1,6 @@
 {
   "name": "wh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webhook, a CMS and static site generator",
   "keywords": ["webhook", "cms", "static generator", "static site generator"],
   "main": "index.js",
