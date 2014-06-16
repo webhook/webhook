@@ -28,6 +28,13 @@ module.exports = function (argv) {
       });
 
     program
+      .command('list-sites')
+      .description('Lists all the sites that the user is an owner/user on')
+      .action(function () {
+        require('./lib/list-sites.js')();
+      });
+
+    program
       .command('preset-build')
       .description('Generates a preset-data.json file from a webhook directory')
       .action(function () {
