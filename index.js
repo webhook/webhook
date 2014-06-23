@@ -5,7 +5,7 @@ var program = require('commander');
 
 module.exports = function (argv) {
 
-  require('./lib/notifier.js')('v12', function() {
+  require('./lib/notifier.js')('v13', function() {
     program
       .version(require('./package.json').version);
 
