@@ -23,7 +23,7 @@ The Webhook CLI has the following commands:
 
 ```
 wh create sitename                 # Create a new Webhook directory/site at "sitename".
-wh serve                           # Serves a Webhook site locally. Watch for changes.
+wh serve [port]                    # Serves a Webhook site locally on the optional port. Default port is 2002.
 wh deploy                          # Packages local, deploys to the live server, and runs a new build.
 wh update                          # Updates the site directory you're in to use the latest Webhook runserver code libraries.
 

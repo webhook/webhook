@@ -63,10 +63,12 @@ module.exports = function (argv) {
       });
 
     program
-      .command('serve')
+      .command('serve [port]')
       .description('Serves a webhook site locally')
-      .action(function () {
-        require('./lib/serve.js')();
+      .action(function (port) {
+        require('./lib/serve.js')({
+          port: port || null
+        });
       });
     
     program
