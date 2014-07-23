@@ -1,6 +1,6 @@
 {
   "name": "wh",
-  "version": "1.0.17",
+  "version": "1.0.16",
   "description": "Webhook is the easiest way to build a custom CMS for your next website.",
   "keywords": [
     "webhook",
@@ -42,7 +42,6 @@
     "restler": "~3.1.0",
     "mime": "~1.2.11",
     "archiver": "~0.6.1",
-    "inquirer": "~0.5.1",
-    "read": "~1.0.5"
+    "inquirer": "~0.5.1"
   }
 }
