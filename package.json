@@ -2,7 +2,12 @@
   "name": "wh",
   "version": "1.0.15",
   "description": "Webhook is the easiest way to build a custom CMS for your next website.",
-  "keywords": ["webhook", "cms", "static generator", "static site generator"],
+  "keywords": [
+    "webhook",
+    "cms",
+    "static generator",
+    "static site generator"
+  ],
   "main": "index.js",
   "bin": "./bin/wh",
   "repository": {
@@ -31,12 +36,12 @@
     "win-spawn": "~2.0.0",
     "request": "~2.31.0",
     "adm-zip": "~0.4.3",
-    "inquirer": "~0.4.0",
     "lodash": "~2.4.1",
     "github": "~0.1.12",
     "firebase": "1.0.2",
     "restler": "~3.1.0",
     "mime": "~1.2.11",
-    "archiver": "~0.6.1"
+    "archiver": "~0.6.1",
+    "inquirer": "~0.5.1"
   }
 }
