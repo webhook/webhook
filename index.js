@@ -63,7 +63,7 @@ module.exports = function (argv) {
       .command('update')
       .description('Updates a webhook site with the latest generate code')
       .action(function () {
-        require('./lib/update.js')({,
+        require('./lib/update.js')({
           firebase: program.firebase
         });
       });
