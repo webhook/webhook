@@ -4,8 +4,8 @@ This repository is for the Webhook command line tools. We are currently in the p
 
 * [webhook-generate](https://github.com/webhook/webhook-generate) - The local runserver for Webhook.
 * [webhook-js](https://github.com/webhook/webhook-js) - A collection of jQuery utils for Webhook.
+* [webhook-cms]([webhook-js](https://github.com/webhook/webhook-cms)) - The CMS layer and frotend GUI. A single page Ember app.
 * webhook-server - The production server for serving and regenerating live Webhook sites.
-* webhook-cms - A single page ember app which acts as the CMS for individual Webhook sites.
 
 ## Webhook Command Line Tools
 
