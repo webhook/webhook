@@ -84,7 +84,7 @@ module.exports = function (argv) {
       .action(function () {
         require('./lib/push.js')({
           firebase: program.firebase,
-          server: server
+          server: program.server
         });
       });
 
