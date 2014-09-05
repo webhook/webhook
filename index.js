@@ -16,8 +16,14 @@ module.exports = function (argv) {
       .command('create <siteName>')
       .description('Create a new webhook site')
       .action(function (siteName) {
+        var siteName = siteName.toLowerCase();
+
+        if(program.firebase) {
+          siteName = siteName.replace(/\./g, ',1');
+        }
+
         require('./lib/create.js')({
-          siteName: siteName.toLowerCase(),
+          siteName: siteName,
           firebase: program.firebase
         });
       });
@@ -26,8 +32,14 @@ module.exports = function (argv) {
       .command('init <siteName>')
       .description('Initializes a site with configuration files')
       .action(function (siteName) {
+        var siteName = siteName.toLowerCase();
+
+        if(program.firebase) {
+          siteName = siteName.replace(/\./g, ',1');
+        }
+        
         require('./lib/init.js')({
-          siteName: siteName.toLowerCase(),
+          siteName: siteName,
           firebase: program.firebase
         });
       });
