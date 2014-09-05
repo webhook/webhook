@@ -11,7 +11,6 @@ module.exports = function (argv) {
       .option('-f, --firebase [firebasename]', 'Use the specified firebase instead of webhook main, for self hosting mode')
       .option('-s, --server [uploadserver]', 'Use this server when uploading files, for self hosting mode');
 
-
     program
       .command('create <siteName>')
       .description('Create a new webhook site')
@@ -41,6 +40,23 @@ module.exports = function (argv) {
         require('./lib/init.js')({
           siteName: siteName,
           firebase: program.firebase
+        });
+      });
+
+    program
+      .command('recreate <siteName>')
+      .description('Recreates a site using the last version of the site uploaded to the webhok servers.')
+      .action(function (siteName) {
+        var siteName = siteName.toLowerCase();
+
+        if(program.firebase) {
+          siteName = siteName.replace(/\./g, ',1');
+        }
+        
+        require('./lib/recreate.js')({
+          siteName: siteName,
+          firebase: program.firebase,
+          server: program.server
         });
       });
 
