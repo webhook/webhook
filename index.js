@@ -5,7 +5,7 @@ var program = require('commander');
 
 module.exports = function (argv) {
 
-  require('./lib/notifier.js')('v14', function() {
+  require('./lib/notifier.js')('v15', function() {
     program
       .version(require('./package.json').version)
       .option('-f, --firebase [firebasename]', 'Use the specified firebase instead of webhook main, for self hosting mode')
