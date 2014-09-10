@@ -9,7 +9,11 @@ module.exports = function (argv) {
     program
       .version(require('./package.json').version)
       .option('-f, --firebase [firebasename]', 'Use the specified firebase instead of webhook main, for self hosting mode')
-      .option('-s, --server [uploadserver]', 'Use this server when uploading files, for self hosting mode');
+      .option('-s, --server [uploadserver]', 'Use this server when uploading files, for self hosting mode')
+      .option('-n, --npm [npmPath]', 'Use this npm executable over the default one (npm)')
+      .option('-g, --grunt [gruntPath]', 'Use this grunt executable over the default one (grunt)')
+      .option('-t, --token [authToken]', 'Use this auth token for firebase instead of prompting for login')
+      .option('-e, --email [email]', 'The e-mail address to use when using the --token option');
 
     program
       .command('create <siteName>')
@@ -23,7 +27,11 @@ module.exports = function (argv) {
 
         require('./lib/create.js')({
           siteName: siteName,
-          firebase: program.firebase
+          firebase: program.firebase,
+          npm: program.npm,
+          grunt: program.grunt,
+          token: program.token,
+          email: program.email
         });
       });
 
@@ -39,7 +47,11 @@ module.exports = function (argv) {
         
         require('./lib/init.js')({
           siteName: siteName,
-          firebase: program.firebase
+          firebase: program.firebase,
+          npm: program.npm,
+          grunt: program.grunt,
+          token: program.token,
+          email: program.email
         });
       });
 
@@ -56,7 +68,11 @@ module.exports = function (argv) {
         require('./lib/recreate.js')({
           siteName: siteName,
           firebase: program.firebase,
-          server: program.server
+          server: program.server,
+          npm: program.npm,
+          grunt: program.grunt,
+          token: program.token,
+          email: program.email
         });
       });
 
@@ -65,7 +81,11 @@ module.exports = function (argv) {
       .description('Lists all the sites that the user is an owner/user on')
       .action(function () {
         require('./lib/list-sites.js')({
-          firebase: program.firebase
+          firebase: program.firebase,
+          npm: program.npm,
+          grunt: program.grunt,
+          token: program.token,
+          email: program.email
         });
       });
 
@@ -74,7 +94,11 @@ module.exports = function (argv) {
       .description('Generates a preset-data.json file from a webhook directory')
       .action(function () {
         require('./lib/preset-build.js')(false, {
-          firebase: program.firebase
+          firebase: program.firebase,
+          npm: program.npm,
+          grunt: program.grunt,
+          token: program.token,
+          email: program.email
         });
       });
 
@@ -83,7 +107,11 @@ module.exports = function (argv) {
       .description('Generates a preset-data.json file from a webhook directory which includes data')
       .action(function () {
         require('./lib/preset-build.js')(true, {
-          firebase: program.firebase
+          firebase: program.firebase,
+          npm: program.npm,
+          grunt: program.grunt,
+          token: program.token,
+          email: program.email
         });
       });
 
@@ -92,7 +120,11 @@ module.exports = function (argv) {
       .description('Updates a webhook site with the latest generate code')
       .action(function () {
         require('./lib/update.js')({
-          firebase: program.firebase
+          firebase: program.firebase,
+          npm: program.npm,
+          grunt: program.grunt,
+          token: program.token,
+          email: program.email
         });
       });
 
@@ -102,7 +134,11 @@ module.exports = function (argv) {
       .action(function () {
         require('./lib/push.js')({
           firebase: program.firebase,
-          server: program.server
+          server: program.server,
+          npm: program.npm,
+          grunt: program.grunt,
+          token: program.token,
+          email: program.email
         });
       });
       
@@ -112,7 +148,11 @@ module.exports = function (argv) {
       .action(function () {
         require('./lib/push.js')({
           firebase: program.firebase,
-          server: program.server
+          server: program.server,
+          npm: program.npm,
+          grunt: program.grunt,
+          token: program.token,
+          email: program.email
         });
       });
 
@@ -122,7 +162,11 @@ module.exports = function (argv) {
       .action(function (port) {
         require('./lib/serve.js')({
           port: port || null,
-          firebase: program.firebase
+          firebase: program.firebase,
+          npm: program.npm,
+          grunt: program.grunt,
+          token: program.token,
+          email: program.email
         });
       });
     
