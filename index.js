@@ -169,6 +169,18 @@ module.exports = function (argv) {
           email: program.email
         });
       });
+
+    program
+      .command('echo-options')
+      .description('Echos options passed into this command, used for debugging')
+      .action(function() {
+        console.log(program.firebase);
+        console.log(program.server);
+        console.log(program.npm);
+        console.log(program.grunt);
+        console.log(program.token);
+        console.log(program.email);
+      });
     
     program
       .parse(argv);
