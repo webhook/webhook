@@ -1,11 +1,14 @@
-# Webhook repositories
+# Webhook Overview
 
-This repository is for the Webhook command line tools. We are currently in the process of open sourcing the entirely of Webhook which is split over a few repos. The goal is to have them available by late August.
+This repository is for the Webhook command line tools. There are several other repositories in Webhook's core.
 
+* [webhook](https://github.com/webhook/webhook) - The Webhook command line tools.
 * [webhook-generate](https://github.com/webhook/webhook-generate) - The local runserver for Webhook.
-* [webhook-js](https://github.com/webhook/webhook-js) - A collection of jQuery utils for Webhook.
 * [webhook-cms](https://github.com/webhook/webhook-cms) - The CMS layer and frotend GUI. A single page Ember app.
-* webhook-server - The production server for serving and regenerating live Webhook sites.
+* [webhook-server-open](https://github.com/webhook/webhook-server-open) - The production server for serving and regenerating live Webhook sites.
+* [webhook-images](https://github.com/webhook/webhook-images) - Image resizing for the Webhook frontend. For Google App Engine.
+
+If you are interested in self-hosting Webhook, [check the instructions here](http://www.webhook.com/docs/self-host-webhook/).
 
 ## Webhook Command Line Tools
 
