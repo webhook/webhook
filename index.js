@@ -11,6 +11,7 @@ module.exports = function (argv) {
       .option('-f, --firebase [firebasename]', 'Use the specified firebase instead of webhook main, for self hosting mode')
       .option('-s, --server [uploadserver]', 'Use this server when uploading files, for self hosting mode')
       .option('-n, --npm [npmPath]', 'Use this npm executable over the default one (npm)')
+      .option('-o, --node [nodePath]', 'Use this node executable over the default one (node)')
       .option('-g, --grunt [gruntPath]', 'Use this grunt executable over the default one (grunt)')
       .option('-t, --token [authToken]', 'Use this auth token for firebase instead of prompting for login')
       .option('-e, --email [email]', 'The e-mail address to use when using the --token option');
@@ -29,6 +30,7 @@ module.exports = function (argv) {
           siteName: siteName,
           firebase: program.firebase,
           npm: program.npm,
+          node: program.node,
           grunt: program.grunt,
           token: program.token,
           email: program.email
@@ -49,6 +51,7 @@ module.exports = function (argv) {
           siteName: siteName,
           firebase: program.firebase,
           npm: program.npm,
+          node: program.node,
           grunt: program.grunt,
           token: program.token,
           email: program.email
@@ -70,6 +73,7 @@ module.exports = function (argv) {
           firebase: program.firebase,
           server: program.server,
           npm: program.npm,
+          node: program.node,
           grunt: program.grunt,
           token: program.token,
           email: program.email
@@ -83,6 +87,7 @@ module.exports = function (argv) {
         require('./lib/list-sites.js')({
           firebase: program.firebase,
           npm: program.npm,
+          node: program.node,
           grunt: program.grunt,
           token: program.token,
           email: program.email
@@ -96,6 +101,7 @@ module.exports = function (argv) {
         require('./lib/preset-build.js')(false, {
           firebase: program.firebase,
           npm: program.npm,
+          node: program.node,
           grunt: program.grunt,
           token: program.token,
           email: program.email
@@ -109,6 +115,7 @@ module.exports = function (argv) {
         require('./lib/preset-build.js')(true, {
           firebase: program.firebase,
           npm: program.npm,
+          node: program.node,
           grunt: program.grunt,
           token: program.token,
           email: program.email
@@ -122,6 +129,7 @@ module.exports = function (argv) {
         require('./lib/update.js')({
           firebase: program.firebase,
           npm: program.npm,
+          node: program.node,
           grunt: program.grunt,
           token: program.token,
           email: program.email
@@ -136,6 +144,7 @@ module.exports = function (argv) {
           firebase: program.firebase,
           server: program.server,
           npm: program.npm,
+          node: program.node,
           grunt: program.grunt,
           token: program.token,
           email: program.email
@@ -150,6 +159,7 @@ module.exports = function (argv) {
           firebase: program.firebase,
           server: program.server,
           npm: program.npm,
+          node: program.node,
           grunt: program.grunt,
           token: program.token,
           email: program.email
@@ -164,6 +174,7 @@ module.exports = function (argv) {
           port: port || null,
           firebase: program.firebase,
           npm: program.npm,
+          node: program.node,
           grunt: program.grunt,
           token: program.token,
           email: program.email
@@ -177,6 +188,7 @@ module.exports = function (argv) {
         console.log(program.firebase);
         console.log(program.server);
         console.log(program.npm);
+        console.log(program.node);
         console.log(program.grunt);
         console.log(program.token);
         console.log(program.email);
