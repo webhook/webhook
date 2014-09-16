@@ -60,7 +60,7 @@ module.exports = function (argv) {
 
     program
       .command('recreate <siteName>')
-      .description('Recreates a site using the last version of the site uploaded to the webhok servers.')
+      .description('Recreates a site using the last version of the site uploaded to the webhook servers.')
       .action(function (siteName) {
         var siteName = siteName.toLowerCase();
 
