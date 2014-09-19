@@ -15,6 +15,7 @@ module.exports = function (argv) {
       .option('-o, --node [nodePath]', 'Use this node executable over the default one (node)')
       .option('-g, --grunt [gruntPath]', 'Use this grunt executable over the default one (grunt)')
       .option('-t, --token [authToken]', 'Use this auth token for firebase instead of prompting for login')
+      .option('-f, --force [force]', 'If true, will force update')
       .option('-e, --email [email]', 'The e-mail address to use when using the --token option');
 
     program
@@ -133,7 +134,8 @@ module.exports = function (argv) {
           node: program.node,
           grunt: program.grunt,
           token: program.token,
-          email: program.email
+          email: program.email,
+          force: program.force
         });
       });
 
