@@ -5,7 +5,9 @@ var program = require('commander');
 
 module.exports = function (argv) {
 
-  require('./lib/notifier.js')('v15', function() {
+  var version = 'v15';
+
+  require('./lib/notifier.js')(version, function() {
     program
       .version(require('./package.json').version)
       .option('-f, --firebase [firebasename]', 'Use the specified firebase instead of webhook main, for self hosting mode')
@@ -15,6 +17,14 @@ module.exports = function (argv) {
       .option('-g, --grunt [gruntPath]', 'Use this grunt executable over the default one (grunt)')
       .option('-t, --token [authToken]', 'Use this auth token for firebase instead of prompting for login')
       .option('-e, --email [email]', 'The e-mail address to use when using the --token option');
+
+    program
+      .command('ver')
+      .description('Prints the version of the webhook tools')
+      .action(function() {
+        console.log(version);
+        process.exit(0);
+      });
 
     program
       .command('create <siteName>')
