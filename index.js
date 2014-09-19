@@ -3,10 +3,9 @@
 require('colors');
 var program = require('commander');
 
+var version = 'v15';
+
 module.exports = function (argv) {
-
-  var version = 'v15';
-
   require('./lib/notifier.js')(version, function() {
     program
       .version(require('./package.json').version)
@@ -17,14 +16,6 @@ module.exports = function (argv) {
       .option('-g, --grunt [gruntPath]', 'Use this grunt executable over the default one (grunt)')
       .option('-t, --token [authToken]', 'Use this auth token for firebase instead of prompting for login')
       .option('-e, --email [email]', 'The e-mail address to use when using the --token option');
-
-    program
-      .command('ver')
-      .description('Prints the version of the webhook tools')
-      .action(function() {
-        console.log(version);
-        process.exit(0);
-      });
 
     program
       .command('create <siteName>')
@@ -210,3 +201,5 @@ module.exports = function (argv) {
     if (!program.args.length) program.help();
   });
 };
+
+module.exports.version = version;
