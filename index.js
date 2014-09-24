@@ -40,6 +40,28 @@ module.exports = function (argv) {
       });
 
     program
+      .command('delete <siteName>')
+      .description('Delete a site from webhook')
+      .action(function (siteName) {
+        var siteName = siteName.toLowerCase();
+
+        if(program.firebase) {
+          siteName = siteName.replace(/\./g, ',1');
+        }
+
+        require('./lib/delete.js')({
+          siteName: siteName,
+          firebase: program.firebase,
+          npm: program.npm,
+          node: program.node,
+          grunt: program.grunt,
+          token: program.token,
+          email: program.email,
+          force: program.force
+        });
+      });
+
+    program
       .command('init <siteName>')
       .description('Initializes a site with configuration files')
       .action(function (siteName) {
