@@ -3,7 +3,7 @@
 require('colors');
 var program = require('commander');
 
-var version = 'v19';
+var version = 'v20';
 
 module.exports = function (argv) {
   require('./lib/notifier.js')(version, function() {
