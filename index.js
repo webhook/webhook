@@ -35,7 +35,8 @@ module.exports = function (argv) {
           node: program.node,
           grunt: program.grunt,
           token: program.token,
-          email: program.email
+          email: program.email,
+          force: program.force
         });
       });
 
