@@ -77,6 +77,7 @@ module.exports = function (argv) {
         require('./lib/init.js')({
           siteName: siteName,
           firebase: program.firebase,
+          server: program.server,
           npm: program.npm,
           node: program.node,
           grunt: program.grunt,
@@ -115,6 +116,7 @@ module.exports = function (argv) {
       .action(function () {
         require('./lib/list-sites.js')({
           firebase: program.firebase,
+          server: program.server,
           npm: program.npm,
           node: program.node,
           grunt: program.grunt,
@@ -129,6 +131,7 @@ module.exports = function (argv) {
       .action(function () {
         require('./lib/preset-build.js')(false, {
           firebase: program.firebase,
+          server: program.server,
           npm: program.npm,
           node: program.node,
           grunt: program.grunt,
@@ -143,6 +146,7 @@ module.exports = function (argv) {
       .action(function () {
         require('./lib/preset-build.js')(true, {
           firebase: program.firebase,
+          server: program.server,
           npm: program.npm,
           node: program.node,
           grunt: program.grunt,
@@ -157,6 +161,7 @@ module.exports = function (argv) {
       .action(function () {
         require('./lib/update.js')({
           firebase: program.firebase,
+          server: program.server,
           npm: program.npm,
           node: program.node,
           grunt: program.grunt,
@@ -204,6 +209,7 @@ module.exports = function (argv) {
         require('./lib/serve.js')({
           port: port || null,
           firebase: program.firebase,
+          server: program.server,
           npm: program.npm,
           node: program.node,
           grunt: program.grunt,
