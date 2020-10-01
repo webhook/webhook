@@ -20,7 +20,7 @@ to function properly.
 Webhook uses [Grunt](http://www.gruntjs.com) for its local runserver and task runner.
 The Webhook command line tools are sometimes simple aliases to specific Grunt commands.
 
-## Installation
+## Basic stallation
 
 Requires the installation of [Node JS](http://www.nodejs.org). Once installed open your
 terminal and run:
